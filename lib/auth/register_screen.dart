@@ -1,246 +1,207 @@
-import 'package:basic_task/auth/login_screen.dart';
+import 'package:basic_task/auth/login_scren.dart';
 import 'package:basic_task/auth/start_screen.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icon_shadow/flutter_icon_shadow.dart';
-import 'package:flutter_social_button/flutter_social_button.dart';
-import 'package:text_divider/text_divider.dart';
+import 'package:sign_button/constants.dart';
+import 'package:sign_button/create_button.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Padding(
-            padding:
-                const EdgeInsets.only(left: 15, right: 15, top: 30, bottom: 15),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: CircleAvatar(
-                    radius: 18,
-                    backgroundColor: Color(0xffd4e0e9),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const StartScreen()),
-                        );
-                      },
-                      child: Icon(
-                        Icons.arrow_back_ios_sharp,
-                        color: Color(0xFF003c7f),
-                        size: 21,
-                      ),
-                    ),
-                  ),
-                ),
-                Text(
-                  'Register',
-                  style: TextStyle(
-                    color: Color(0xFF02397c),
-                    fontSize: 32,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                Text(
-                  'Create your new account',
-                  style: TextStyle(
-                    color: Color(0xFFa0b6cf),
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Color(0xFFe3ebf5),
-                      prefixIcon: Icon(
-                        Icons.person,
-                        color: Color(0xFF134382),
-                        size: 19,
-                      ),
-                      hintText: "Full name",
-                      hintStyle: TextStyle(
-                          color: Color(0xFF7190b7),
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold),
-                      border: InputBorder.none),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color(0xFFe3ebf5),
-                    prefixIcon: Icon(
-                      Icons.mail,
-                      color: Color(0xFF134382),
-                      size: 19,
-                    ),
-                    hintText: "user@gmail.com",
-                    hintStyle: TextStyle(
-                        color: Color(0xFF7190b7),
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
-                    border: InputBorder.none,
-                    isDense: true,
-                    constraints: BoxConstraints(),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                TextFormField(
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  style: TextStyle(color: Color(0xFF7190b7), fontSize: 16),
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Color(0xFFe3ebf5),
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      color: Color(0xFF134382),
-                      size: 19,
-                    ),
-                    border: InputBorder.none,
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(Color(0xFF003c7f)),
-                      padding: MaterialStateProperty.all(
-                        EdgeInsets.symmetric(horizontal: 145, vertical: 15),
-                      ),
-                    ),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 25.0,left: 10),
+              child: Align(alignment: Alignment.centerLeft,
+                child: CircleAvatar(
+                    radius: 19,
+                    backgroundColor: Color(0xFFd4e0e9),
+                    child: GestureDetector(onTap: (){{
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => StartScreen()),
+                      );
+                    }},
+                        child: Icon(Icons.arrow_back_ios_sharp))),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 30.0, right: 30.0),
+              child: Column(
+                children: [
+                  Center(
                     child: Text(
-                      'Login',
+                      'Register',
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    )),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)),
-                            value: false,
-                            onChanged: (value) {}),
-                        Text(
-                          'Remember me',
-                          style: TextStyle(
-                            color: Color(0xFF8daccb),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      'Forgot password ?',
-                      style: TextStyle(
-                          color: Color(0xFF012a71),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextDivider.horizontal(
-                  thickness: 2,
-                  text: const Text(
-                    'Or continue with',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
+                          color: Color(0xFF346296),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 42),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: FlutterSocialButton(
-                        onTap: () {},
-                        buttonType: ButtonType.google,
-                        mini: true,
-                      ),
+                  Center(
+                    child: Text(
+                      'Create your new account',
+                      style: TextStyle(
+                          color: Color(0xFFa3bbd4),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
                     ),
-                    //For facebook Button
-                    Expanded(
-                      child: FlutterSocialButton(
-                        onTap: () {},
-                        buttonType: ButtonType.facebook,
-                        mini: true,
-                      ),
+                  ),
+                  SizedBox(
+                    height: 70,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        filled: true,
+                        fillColor: Color(0xFFe3ebf5),
+                        prefixIcon: Icon(
+                          Icons.person,size: 20,
+                          color: Color(0xFF003a7e),
+                        ),
+                        hintText: "Full name",
+                        hintStyle:
+                            TextStyle(color: Color(0xFF003a7e), fontSize: 14),
+                        border: OutlineInputBorder(borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(15))),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  TextFormField(
+                    decoration: InputDecoration(contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        filled: true,
+                        fillColor: Color(0xFFe3ebf5),
+                        prefixIcon: Icon(
+                          Icons.mail,size: 20,
+                          color: Color(0xFF003a7e),
+                        ),
+                        hintText: "user@gmail.com",
+                        hintStyle:
+                            TextStyle(color: Color(0xFF003a7e), fontSize: 14),
+                        border: OutlineInputBorder(borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(15))),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                        prefixIcon: Icon(Icons.lock,color: Color(0xFF003a7e),size: 20,),
+                        filled: true,fillColor: Color(0xFFe3ebf5),
+                      hintText: 'Password',
+                        hintStyle:
+                        TextStyle(color: Color(0xFF003a7e), fontSize: 14),
+                        border: OutlineInputBorder(borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(15))
                     ),
-                    //For google Button
-                    Expanded(
-                      child: FlutterSocialButton(
-                        onTap: () {},
-                        buttonType: ButtonType.google,
-                        mini: true,
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: Size(400, 50),
+                        backgroundColor: Color(0xFF003c7f),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                RichText(
-                  text: TextSpan(
-                    text: 'Already have an account?',
-                    style: TextStyle(
-                        color: Color(0xFFa0b6cf),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                    children: [
-                      TextSpan(
-                        text: '  Signin',
-                        recognizer: new TapGestureRecognizer()
-                          ..onTap = () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginScreen()),
-                                )
-                              },
+                      child: Text(
+                        'Login',
                         style:
-                            TextStyle(color: Color(0xFF02397c), fontSize: 20),
+                        TextStyle(color: Colors.white)
+                        ,
+                      )),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Checkbox(value: true, onChanged: (value) {}),
+                      Text(
+                        'Remember me',
+                        style: TextStyle(color: Color(0xFF84a5c7), fontSize: 16),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 50),
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Color(0xFF346296)),
+                        ),
                       )
                     ],
                   ),
-                ),
-              ],
+                  Row(children: [
+                    Expanded(child: Divider()),
+                    Text(
+                      "Or continue with",
+                      style: TextStyle(color: Colors.black, fontSize: 14),
+                    ),
+                    Expanded(child: Divider()),
+                  ]),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  SizedBox(
+                      height: 30,
+                      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SignInButton.mini(
+                              buttonSize: ButtonSize.small,
+                              buttonType: ButtonType.facebook,
+                              onPressed: () {
+                                print('click');
+                              }),
+                          SignInButton.mini(
+                            buttonType: ButtonType.google,
+                            onPressed: () {},
+                          ),
+                          SignInButton.mini(
+                            buttonType: ButtonType.apple,
+                            onPressed: () {},
+                          ),
+                        ],
+                      )),
+                  SizedBox(height: 15,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Dont' have an account?",
+                        style: TextStyle(color: Color(0xFF7d9bbd), fontSize: 16),
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Login_Screen()),
+                              );
+                            }
+                          },
+                          child: Text(
+                            'Signin',
+                            style: TextStyle(
+                                color: Color(0xFF346296),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  )
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
   }
 }
+
+

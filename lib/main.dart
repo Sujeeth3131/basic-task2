@@ -1,4 +1,4 @@
-import 'package:basic_task/auth/login_screen.dart';
+import 'package:basic_task/auth/login_scren.dart';
 import 'package:basic_task/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: RegisterScreen(),
+      home:StartScreen(),
     );
   }
 }
